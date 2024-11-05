@@ -44,6 +44,7 @@ const UploadPage = observer(() => {
             <Title size="lg" className="text-center px-4">
               Uploaded Files
             </Title>
+            <UploadSection />
           </Box>
           <ViewTable files={TICFiles} />
         </Card>
