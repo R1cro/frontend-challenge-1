@@ -38,4 +38,3 @@ This project is a React application designed to facilitate the generation of Mac
 ## Additional Information
 
 - Ensure all dependencies are installed and all configuration files are present.
-- For more detailed information about the project and its architecture, please refer to the `DESIGN.md` file.
