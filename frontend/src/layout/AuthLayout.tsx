@@ -1,6 +1,6 @@
 import { Outlet, Navigate, useLocation } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
-import { useAuthStore } from '~/stores/authStore';
+import { useAuthStore } from '~/stores/AuthStore';
 
 const AuthLayout = observer(() => {
   const { pathname } = useLocation();

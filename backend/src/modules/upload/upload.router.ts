@@ -12,7 +12,7 @@ class UploadRouter {
 
     router.get('/', this.uploadController.getFiles);
     router.get('/:fileId', this.uploadController.getFiles);
-    router.post('/upload/csv', this.uploadController.uploadCSV);
+    router.post('/upload', this.uploadController.uploadCSV);
 
     return router;
   }

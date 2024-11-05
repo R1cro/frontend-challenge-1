@@ -1,9 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 import BasicLayout from './layout/BasicLayout';
 import NotFoundPage from './pages/error/NotFound';
-import MainPage from './pages/index';
 import SignInPage from './pages/sign-in/SignInPage';
 import AuthLayout from './layout/AuthLayout';
+import UploadPage from './pages/upload/UploadPage';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: '/',
-            element: <MainPage />
+            element: <UploadPage />
           }
         ]
       }

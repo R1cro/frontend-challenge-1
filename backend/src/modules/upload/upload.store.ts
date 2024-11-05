@@ -4,10 +4,11 @@ import * as process from 'node:process';
 import { injectable } from 'inversify';
 import { v4 as uuidv4 } from 'uuid';
 import { UploadTICFile, TICFile } from './types';
+import { API_URL } from '~/constants/urls';
 
 @injectable()
 class UploadStore {
-  private readonly STORE_FOLDER_PATH = path.resolve(process.cwd(), 'store');
+  private readonly STORE_FOLDER_PATH = path.resolve(process.cwd(), 'dist');
 
   constructor() {
     void fs.mkdir(this.STORE_FOLDER_PATH, { recursive: true });
@@ -23,7 +24,7 @@ class UploadStore {
     const storeId = uuidv4();
     const storeMRF: UploadTICFile = {
       id: storeId,
-      url: `http://localhost:8080/store/mrf/${storeId}.json`,
+      url: `${API_URL}/dist/${storeId}.json`,
       data: mrf
     };
     const fileName = `${storeMRF.id}.json`;

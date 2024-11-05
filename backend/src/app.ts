@@ -1,3 +1,4 @@
+import { FRONTEND_HOST_URL } from './constants/urls';
 import 'reflect-metadata';
 import { serveStatic } from '@hono/node-server/serve-static';
 import { Hono } from 'hono';
@@ -23,8 +24,8 @@ app.onError((err, c) => {
 });
 
 app.use('*', secureHeaders());
-app.use('*', cors({ origin: ['http://localhost:5174'], credentials: true }));
-app.use('/store/*', serveStatic({ root: './' }));
+app.use('*', cors({ origin: [FRONTEND_HOST_URL], credentials: true }));
+app.use('/dist/*', serveStatic({ root: './' }));
 
 app.route('/api/v1', appRouter.getRouter());
 export default app;

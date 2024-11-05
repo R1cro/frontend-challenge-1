@@ -16,8 +16,8 @@ export class AppRouter {
     const router = new Hono();
 
     router.route('/auth', this.authRouter.getRouter());
-    router.use('/upload/*', authMiddleware);
-    router.route('/upload', this.uploadRouter.getRouter());
+    router.use('/files/*', authMiddleware);
+    router.route('/files', this.uploadRouter.getRouter());
 
     return router;
   }

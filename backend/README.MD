@@ -25,4 +25,4 @@ npm install
 
    This will use `nodemon` to automatically restart the server on file changes. The command is defined in the `package.json` file:
 
-2. The server will be accessible at `http://localhost:8080`.
+2. The server will be accessible at `http://localhost:5555`.
