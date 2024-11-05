@@ -1,6 +1,6 @@
-# 🏆 Coding Challenge: MRF Generation from Claims File OON Rates
+# Coding Challenge: MRF Generation from Claims File OON Rates
 
-## 📚 Introduction
+## Introduction
 
 As part of the Transparency in Coverage (TiC) regulations, health insurers are required to publish their allowed amounts monthly in a machine-readable format. This challenge involves building a React application that facilitates the generation of these Machine-Readable Files (MRFs) from a CSV file containing claims data.
 
