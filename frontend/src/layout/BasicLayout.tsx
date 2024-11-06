@@ -4,9 +4,9 @@ import NavigationBar from '~/components/NavigationBar';
 
 export default function BasicLayout() {
   return (
-    <Box className="!w-full bg-gray-200">
+    <Box className="w-full bg-gray-200">
       <NavigationBar />
-      <Box p="md" className="!w-full">
+      <Box p="md" className="w-full">
         <Outlet />
       </Box>
     </Box>

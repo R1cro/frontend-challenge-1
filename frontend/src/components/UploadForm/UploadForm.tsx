@@ -16,6 +16,10 @@ type UploadFormProps = {
 
 type UploadData = z.infer<typeof uploadFileSchema>;
 
+type FormData = {
+  csvFile: File | undefined;
+};
+
 const UploadForm: React.FC<UploadFormProps> = ({ onSubmit }) => {
   const { uploadCSVFile } = useUploadStore();
   const { control, handleSubmit, setValue } = useForm<FormData>({
@@ -93,7 +97,22 @@ const UploadForm: React.FC<UploadFormProps> = ({ onSubmit }) => {
       <form onSubmit={handleSubmit(handleFormSubmit)}>
         <Box>
           <Box mb="md">
-            <Controller name="csvFile" control={control} render={({ field }) => <FileInput placeholder="Choose file" accept=".csv" {...field} onChange={handleFileUpload} />} />
+            <Controller
+              name="csvFile"
+              control={control}
+              render={({ field: { value, onChange, ...rest } }) => (
+                <FileInput
+                  placeholder="Choose file"
+                  accept=".csv"
+                  value={value as File | null}
+                  onChange={(file) => {
+                    onChange(file);
+                    handleFileUpload(file);
+                  }}
+                  {...rest}
+                />
+              )}
+            />
           </Box>
           <Box mb="md">
             <div className="ag-theme-quartz" style={{ height: 400, width: '100%' }}>
